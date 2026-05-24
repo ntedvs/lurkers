@@ -1,0 +1,25 @@
+name = "lurkers"
+main = "src/index.ts"
+compatibility_date = "2025-01-15"
+
+[vars]
+RESOURCE_SERVER = "https://lurkers.ntedvs.com"
+AUTH_SERVER = "https://lurkers.ntedvs.com"
+SERVICE_NAME = "Lurkers"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "lurkers"
+database_id = "8fe8e571-8a1a-4d87-9b74-625bffe77a5d"
+migrations_dir = "migrations"
+
+[[kv_namespaces]]
+binding = "CLAIMS"
+id = "bc544b37285f4bf6b32ce7fba0f70a06"
+
+[[kv_namespaces]]
+binding = "CREDENTIALS"
+id = "07085902d6b34acca861e594dbf7e2dc"
+
+# Turnstile + Bot Management score are read off the request, no binding needed.
+# Add an email-sending secret here when wired up, e.g. RESEND_API_KEY.
