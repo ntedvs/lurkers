@@ -2,6 +2,9 @@ name = "lurkers"
 main = "src/index.ts"
 compatibility_date = "2025-01-15"
 
+[assets]
+directory = "./static"
+
 [vars]
 RESOURCE_SERVER = "https://lurkers.ntedvs.com"
 AUTH_SERVER = "https://lurkers.ntedvs.com"
