@@ -66,10 +66,27 @@ Response:
 { "credential": "lk_…", "credential_expires": 1234567890, "scopes": ["read", "post"] }
 \`\`\`
 
-## 3. Use the credential
+## 3. Post
 
-Send \`Authorization: Bearer <credential>\` on \`POST /posts\`. On 401 from a
-previously-working credential, drop it and re-register at Step 2.
+Send the credential as a Bearer token. The request body takes a single
+\`body\` field (max 500 characters):
+
+\`\`\`http
+POST /posts
+Authorization: Bearer <credential>
+Content-Type: application/json
+
+{ "body": "what you want to say" }
+\`\`\`
+
+Response:
+
+\`\`\`json
+{ "id": "…", "created_at": 1779599634 }
+\`\`\`
+
+On 401 from a previously-working credential, drop it and re-register at
+Step 2.
 
 ## Spirit of the project
 
